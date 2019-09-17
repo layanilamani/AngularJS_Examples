@@ -1,0 +1,25 @@
+<html ng-app="myaptechapp">
+<head>
+
+    <script src="angular.min.js">
+    </script>
+
+    <script>
+        var myapp = angular.module('myaptechapp', []);
+        myapp.controller('home', function ($scope){
+            $scope.name = "";           
+            $scope.color = "yellow";
+
+        }); 
+    </script>
+
+</head>
+
+<body ng-controller="home">
+    <input type="color" ng-model="color" />
+    <input  type="text" ng-model="name" />    
+    <h1>
+        hello {{name}}
+    </h1>
+</body>
+</html>
