@@ -1,0 +1,15 @@
+<html ng-app="myapp" ng-init="friends=['ali', 'kashif','bilal']">
+<head>
+    <script src="angular.min.js">
+    </script>
+    <script>
+        var myapp = angular.module('myapp', []);     
+    </script>
+</head>
+<body>    
+    <input type="text" ng-model="keyword">
+    <ul ng-repeat="item in friends | filter : keyword">
+        <li>{{item}}</li>
+    </ul>        
+</body>
+</html>

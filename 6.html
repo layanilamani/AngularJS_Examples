@@ -1,25 +1,17 @@
-<html ng-app="myaptechapp">
+<html ng-app="myapp" ng-init="friends=['ali', 'kamal', 'sajid'];cities=['karachi','lahore', 'pindi']">
 <head>
-
     <script src="angular.min.js">
     </script>
-
     <script>
-        var myapp = angular.module('myaptechapp', []);
-        myapp.controller('home', function ($scope){
-            $scope.name = "";           
-            $scope.color = "yellow";
-
-        }); 
+        var myapp = angular.module('myapp', []);
+           
     </script>
-
 </head>
-
-<body ng-controller="home">
-    <input type="color" ng-model="color" />
-    <input  type="text" ng-model="name" />    
-    <h1>
-        hello {{name}}
-    </h1>
+<body>    
+    <ul>
+        <li ng-repeat="item in friends">
+            <H1>My friend {{item}} lives in {{cities[$index]}}</H1>
+        </li>
+    </ul>
 </body>
 </html>

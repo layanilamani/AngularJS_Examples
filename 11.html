@@ -1,0 +1,20 @@
+<html ng-app="myapp" ng-init="myname='MAZHAR';salary=25000">
+<head>
+    <script src="angular.min.js">
+    </script>
+    <script>
+        var myapp = angular.module('myapp', []);
+        myapp.controller("home", function ($scope) {
+            $scope.aajkidate = new Date();
+        });
+    </script>
+</head>
+<body ng-controller="home">    
+    <h1>My name is {{myname | lowercase}}, my salary is {{salary | currency : "PKR "}}, oor mujhay salary {{aajkidate | date : "MMMM"}} ki nahin mili.
+
+        aaj {{aajkidate | date: "EEEE, dd MMMM yyyy"}} hay.
+        
+
+    </h1>
+</body>
+</html>
