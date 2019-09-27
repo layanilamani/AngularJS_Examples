@@ -1,0 +1,122 @@
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js">
+    </script>
+    <script src="js/angular-route.min.js">
+    </script>
+    <script src="js/jquery-3.4.1.min.js">
+
+    </script>
+
+    <script src="js/popper.min.js">
+
+    </script>
+    <script src="js/bootstrap.min.js">
+    </script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <style>
+        body {
+            background-image: url('images/mateo-vrbnjak-tyAK-wNcZJw-unsplash.jpg')
+        }
+
+        nav {
+            background-color: rgba(3, 3, 3, 0.5);
+        }
+
+        section {
+            text-align: center;
+            margin-top: calc(100vh/3);
+            color:white;
+            width: calc(70vw);            
+            margin-left: 15%;
+            height: 200px;
+            vertical-align: middle;
+                   
+           border-radius: 14px;
+           box-shadow: 0 4px 80px #000;
+           border: 1px solid #312d3c;
+           background: rgba(32, 28, 41, 0.9 );
+        }
+
+        #start {
+            /* margin-top: 50%;
+            margin-left: 10%; */
+            width: 180px;
+            
+                        border-radius: 14px;
+            background-image: radial-gradient(circle at top right, purple, #f06d06);
+            font-size: 20px;
+            color: white;            
+            margin-top: 90px;
+            border: none;
+            box-shadow: 0 4px 80px rgb(238, 226, 226);
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="fluid-container" id="bg1">
+        <header>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Techon</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#!/">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!aboutus">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+
+        <section ng-view>
+           
+        </section>
+        <footer>
+
+        </footer>
+    </div>
+    <script>
+        var myapp = angular.module('myapp', ['ngRoute']);
+
+        
+        myapp.config(function ($routeProvider) {
+            $routeProvider.when('/aboutus', {
+                    templateUrl: "aboutus.html"
+                }).when("/contactus", {
+                    templateUrl: "contactus.html"
+                }).when('/', {
+                    templateUrl: "home.html"
+                });
+        });
+
+    </script>
+
+</body>
+
+</html>
