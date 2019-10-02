@@ -1,0 +1,23 @@
+<html lang="en" ng-app="myapp">
+<head>
+        <script src="angular.min.js">
+            </script>
+    <script>
+        var myapp = angular.module('myapp', []);
+
+        myapp.controller('home',function($scope, $http)
+        {
+            $http.get('http://dataservice.accuweather.com/forecasts/v1/daily/1day/261158?apikey=4KaHLFlTiGQesbYbGzFJJnFBFsMyGogn')
+            .then(function (response) {
+
+                var forecast = response.data.DailyForecasts[0];
+                var calcius = Math.ceil((parseInt(forecast.Temperature.Maximum.Value) - 32)  * 5/9)
+                $scope.somedata = calcius;
+            });
+        });
+    </script>
+</head>
+<body ng-controller="home">
+    {{somedata}} &deg; C
+</body>
+</html>

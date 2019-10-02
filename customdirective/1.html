@@ -1,0 +1,46 @@
+<html lang="en" ng-app="myapp">
+<head>
+    <style>
+        aptech-Welcome {
+            color: green;
+        }
+
+        *[aptech-Welcome]
+        {
+            color:red;
+        }
+
+        p[aptech-Welcome]
+        {
+            color:blue;
+        }
+    </style>
+    <script src="angular.min.js">
+    </script>
+</head>
+
+<body>
+
+    <aptech-Welcome></aptech-Welcome>
+    <div aptech-Welcome>
+
+    </div>
+    <p aptech-Welcome>
+
+    </p>
+    <div class="aptech-Welcome">
+
+    </div>
+    <script>
+        var myapp = angular.module('myapp', []);
+        myapp.directive('aptechWelcome', function () {
+            var mycode = {
+                restrict: 'ACE',
+                templateUrl: 'welcome.html'
+            };
+            return mycode;
+        });
+    </script>
+</body>
+
+</html>
